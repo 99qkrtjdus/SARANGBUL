@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Fullpage</title>
+  <link rel="stylesheet" href="css/jquery.bxslider.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/fullpage.css">
+  <link rel="stylesheet" href="css/colorbox/colorbox.css">
+  <link rel="stylesheet" href="css/swiper.css">
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="js/jquery.fullPage.js"></script>
+  <script src="js/jquery.bxslider.js"></script>
+  <script src="js/jquery.colorbox.js"></script>
+  <script src="js/swiper.js"></script>  
+  <script>
+  	$(document).ready(function(){
+  		$("#fullpage").fullpage({
+  			anchors:["1st","2st","3st","4st","5st"],
+  			menu: "#topmenu",
+  			navigation:true,
+  			slideNavigation:true
+  		});
+
+      $(".tb").click(function(){
+        var i = $(this).index();
+        console.log(i);
+        $("#img>p").hide().eq(i).show();  
+      });
+
+      var current = 0;
+      $(".right").click(function(){
+        if(current<1){
+          current++;  
+        }
+        move();
+      });
+
+      $(".left").click(function(){
+        if(current>0){
+          current--;  
+        }
+        move();
+      });
+
+      function move(){
+        var num = current * 540 * -1;
+        // $(".container>ul").css("left",num);
+        $(".container>ul").stop().animate({left:num},300);
+      };
+
+      $(".modal").colorbox({
+        rel:"modal"
+      });
+      $(".youtube").colorbox({
+        iframe:true,
+        innerWidth:1200,
+        innerHeight:600
+      });
+
+      $(".slider").bxSlider({
+        pager:false,
+        touchEnabled:false
+      });
+  	});
+  </script>
+
+  <style>
+  	nav#navTop{
+      width: 800px;
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+    ul#topmenu{
+      display: table;
+      width: 90%;
+      margin: 20px auto;
+      border: 2px solid #fff;
+    }
+
+    nav#navTop li{
+      display: table-cell;
+      /*background-color: #77b193;*/
+    }
+    
+    nav#navTop li:first-child{border-left: none;}
+    nav#navTop li:hover a{background-color: #fff; color: #000;}
+    nav#navTop li.active a{background-color: #fff; color: #000;}
+    nav#navTop li a{
+      display: block;
+      line-height: 40px;
+      text-align: center;
+      padding: 0 5px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    #fullpage{} 
+    #page1{background-image: url(images/mainmain.jpg); position: relative;}
+    #page2{background-image: url(images/mainmain22.jpg); padding-right: ;}
+    #page3{background-image: url(images/mainmain22.jpg); margin: 0 auto;}
+    #page4{background-image: url(images/mainmain22.jpg);}
+    #page5{background-image: url(images/mainmain4.jpg);}
+
+    .ghed{
+      width: 300px; height: 80px; background-color: #10435b; position: absolute; bottom: 50px;
+      left: 50%; transform: translateX(-50%);
+    }
+    .ghed>a{color: #fff; font-size: 30px; font-weight: bold; text-align: center; line-height: 80px; padding-left: 90px;} 
+
+    .page{
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    #navTop .active{background-color: salmon;}
+
+    #fp-nav ul li a span, .fp-slidesNav ul li a span {
+      background-color: #212121;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    #fp-nav ul li a.active span, .fp-slidesNav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li:hover a.active span {
+      height: 20px;
+      width: 20px;
+      margin: -6px 0 0 -6px;
+      border-radius: 50%;
+    }
+
+    #gallery{width: 400px; height: 400px; margin: 20px auto;}
+    #img{width: 300px; height: 300px; margin: 0 auto; margin-bottom: 20px;}       
+    #img p{display:none; cursor: pointer;}
+    #img p:first-child{display: block;}
+
+    #thumbnail{width: 400px; height: 100px; margin: 0 auto;}
+    #thumbnail div{float: left;}
+    #thumbnail div.left{width: 20px; margin-top: 35px; cursor: pointer;}
+    #thumbnail div.right{width: 15px; margin-top: 35px; margin-left: 10px; cursor: pointer;}
+    #thumbnail .container{width: 540px; height: 100px; position: relative; overflow: hidden;}
+    #thumbnail .container ul{width: 1080px; position: absolute;}
+    #thumbnail .container ul>li{float: left; width: 100px; height: 100px; margin-left: 10px; cursor: pointer;}                       
+   
+    .ml0{margin-left: 0 !important;}
+    
+    .iframe{width: 960px; height: 540px; margin: 0 auto;}
+
+    .swiper-container {
+      width: 100%;
+      padding-top: 80px;
+      padding-bottom: 50px;
+    }
+    .swiper-slide{
+      background-position: center;
+      background-size: cover;
+      width: 400px;
+      height: 400px;
+    }
+    .swiperimg{width: 400px; height: 400px;}
+
+    .djimwrapper{
+      width: 1600px; height: 400px; position: absolute; top: 150px; left: 50%; transform: translateX(-50%);
+    } 
+    .djimwrap>li{
+      float: left; width: 400px; height: 400px;
+      
+    }
+    .djimwrap>li:hover{filter: drop-shadow(5px 5px 5px #333); transform:translate(-30px,-30px);}
+
+    .djim{display: block; width: 400px; height: 400px;}
+    
+    .videoclip{width: 1620px; height: 810px; margin: 0 auto; margin-top: 50px;}     
+
+    .bx-wrapper {
+      -moz-box-shadow: none;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      border: none;
+      background: none;
+    }
+    
+    .family>li{float: left; width: 300px; height: 80px; background-color: #000; margin-left: 80px; margin-top: 100px; padding-left: 75px;}
+    .family>li>a{width: 100%; height: 100%;color: #fff; font-size: 20px; line-height: 80px;}
+  </style>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="navTop">
+      <ul id="topmenu" class="clearfix">
+        <li data-menuanchor = "1st"><a href="#1st">DRAMA</a></li>
+        <li data-menuanchor = "2st"><a href="#2st">CHARACTER</a></li>
+        <li data-menuanchor = "3st"><a href="#3st">PHOTO</a></li>
+        <li data-menuanchor = "4st"><a href="#4st">VIDEO</a></li>
+        <li data-menuanchor = "5st"><a href="#5st">OST</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div id="fullpage">
+    <div class="section page" id="page1" data-anchor="1st">
+      <div class="ghed"><a href="images/ghed.jpg">기획의도</a></div>
+    </div>
+
+    <div class="section page" id="page2" data-anchor="2st">
+      <div class="djimwrapper">
+        <ul class="clearfix djimwrap">
+          <li><a href="images/leejunghyuk.jpg"><img src="images/im01.png" alt="" class="djim"></a></li>
+          <li><a href="images/yoonseri.jpg"><img src="images/im02.png" alt="" class="djim"></a></li>
+          <li><a href="images/seodan.jpg"><img src="images/im03.png" alt="" class="djim"></a></li>
+          <li><a href="images/guseungjoon.jpg"><img src="images/im04.png" alt="" class="djim"></a></li>
+        </ul>
+
+        <ul class="family">
+          <li><a href="images/family01.jpg">리정혁의 사람들</a></li>
+          <li><a href="images/family02.jpg">윤세리의 사람들</a></li>
+          <li><a href="images/family03.jpg">서단의 가족들</a></li>
+          <li><a href="images/family04.jpg">사택마을 사람들</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section page" id="page3" data-anchor="3st">
+      
+    </div>
+
+    <div class="section page" id="page4" data-anchor="4st">
+      <div class="videoclip">
+        <ul class="slider">
+          <li>
+            <iframe width="1620" height="810" src="https://www.youtube.com/embed/6-imtz9v3-g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </li>
+          <li>
+            <iframe width="1620" height="810" src="https://www.youtube.com/embed/9XiULRzIuGI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </li>
+          <li>
+            <iframe width="1620" height="810" src="https://www.youtube.com/embed/NDqWkg2IkUo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </li>
+          <li>
+            <iframe width="1620" height="810" src="https://www.youtube.com/embed/tzb3k9qXqWw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </li>
+          <li>
+            <a href="http://www.tving.com/vod/player/E002836241" target="_blank"><img src="images/borugagi2.jpg" alt="">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section page sliderWrap" id="page5" data-anchor="5st">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <a href="https://www.youtube.com/embed/jGGQyqohOaw" class="youtube">
+              <img src="images/1.jpg" alt="pic" class="swiperimg">
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="https://www.youtube.com/embed/L4Nrp2HUwVA" class="youtube">
+              <img src="images/2.jpg" alt="pic" class="swiperimg">
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="https://www.youtube.com/embed/lUR4XSRvmI8" class="youtube">
+              <img src="images/3.jpg" alt="pic" class="swiperimg">
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="https://www.youtube.com/embed/FFmdTU4Cpr8" class="youtube">
+              <img src="images/4.jpg" alt="pic" class="swiperimg">
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="https://www.youtube.com/embed/QENu0Gcq87I" class="youtube">
+              <img src="images/5.jpg" alt="pic" class="swiperimg">
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="https://www.youtube.com/embed/LYpzDg8pD-k" class="youtube">
+              <img src="images/6.jpg" alt="pic" class="swiperimg">
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="https://www.youtube.com/embed/8P_rJOg4x0g" class="youtube">
+              <img src="images/7.png" alt="pic" class="swiperimg">
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="https://www.youtube.com/embed/bFLMKECxUMY" class="youtube">
+              <img src="images/8.jpg" alt="pic" class="swiperimg">
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="https://www.youtube.com/embed/a0p8PR2uHyY" class="youtube">
+              <img src="images/9.png" alt="pic" class="swiperimg">
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="https://www.youtube.com/embed/EXJfWc4JciQ" class="youtube">
+              <img src="images/10.jpg" alt="pic" class="swiperimg">
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="https://www.youtube.com/embed/euI-C1YONaU" class="youtube">
+              <img src="images/11.jpg" alt="pic" class="swiperimg">
+            </a>
+          </div>  
+        </div>      
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var swiper = new Swiper('.swiper-container',{
+      effect: 'coverflow',
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows : true
+      }   
+    });
+  </script>
+
+</body>
+</html>
+
+ 
+  
+  
+  
+  
+  
+  
+  
+  
+ 
