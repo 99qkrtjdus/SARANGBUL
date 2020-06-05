@@ -65,6 +65,147 @@
   	});
   </script>
 
+  <style>
+    nav#navTop{
+      width: 800px;
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+    ul#topmenu{
+      display: table;
+      width: 90%;
+      margin: 20px auto;
+      border: 2px solid #fff;
+    }
+
+    nav#navTop li{
+      display: table-cell;
+      /*background-color: #77b193;*/
+    }
+    
+    nav#navTop li:first-child{border-left: none;}
+    nav#navTop li:hover a{background-color: #fff; color: #000;}
+    nav#navTop li.active a{background-color: #fff; color: #000;}
+    nav#navTop li a{
+      display: block;
+      line-height: 40px;
+      text-align: center;
+      padding: 0 5px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    #fullpage{} 
+    #page1{background-image: url(images/mainmain.jpg); position: relative;}
+    #page2{background-image: url(images/mainmain22.jpg); padding-right: ;}
+    #page3{background-image: url(images/mainmain22.jpg); margin: 0 auto;}
+    #page4{background-image: url(images/ly-background.jpg); }
+    #page5{background-image: url(images/mainmain4.jpg);}
+
+    .ghed{
+      width: 300px; height: 80px; background-color: #10435b; position: absolute; bottom: 50px;
+      left: 50%; transform: translateX(-50%);
+    }
+    .ghed>a{color: #fff; font-size: 30px; font-weight: bold; text-align: center; line-height: 80px; padding-left: 90px;} 
+
+    .page{
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    #navTop .active{background-color: salmon;}
+
+    #fp-nav ul li, .fp-slidesNav ul li{display: none;}
+
+    #gallery{width: 400px; height: 400px; margin: 20px auto;}
+    #img{width: 300px; height: 300px; margin: 0 auto; margin-bottom: 20px;}       
+    #img p{display:none; cursor: pointer;}
+    #img p:first-child{display: block;}
+
+    #thumbnail{width: 400px; height: 100px; margin: 0 auto;}
+    #thumbnail div{float: left;}
+    #thumbnail div.left{width: 20px; margin-top: 35px; cursor: pointer;}
+    #thumbnail div.right{width: 15px; margin-top: 35px; margin-left: 10px; cursor: pointer;}
+    #thumbnail .container{width: 540px; height: 100px; position: relative; overflow: hidden;}
+    #thumbnail .container ul{width: 1080px; position: absolute;}
+    #thumbnail .container ul>li{float: left; width: 100px; height: 100px; margin-left: 10px; cursor: pointer;}                       
+   
+    .ml0{margin-left: 0 !important;}
+    
+    .iframe{width: 960px; height: 540px; margin: 0 auto;}
+
+    .swiper-container {
+      width: 100%;
+      padding-top: 80px;
+      padding-bottom: 50px;
+    }
+    .swiper-slide{
+      background-position: center;
+      background-size: cover;
+      width: 400px;
+      height: 400px;
+    }
+    .swiperimg{width: 400px; height: 400px;}
+
+    .djimwrapper{
+      width: 1600px; height: 400px; position: absolute; top: 150px; left: 50%; transform: translateX(-50%);
+    } 
+    .djimwrap>li{
+      float: left; width: 400px; height: 400px;
+      
+    }
+    .djimwrap>li:hover{filter: drop-shadow(5px 5px 5px #333); transform:translate(-30px,-30px);}
+
+    .djim{display: block; width: 400px; height: 400px;}
+    
+    .videoclip{width: 760px; height: 380px; margin: 0 auto; margin-top: 100px;}
+
+    .brgg{width: 760px; height: 380px; display: block;}     
+
+    .bx-wrapper {
+      -moz-box-shadow: none;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      border: none;
+      background: none;
+    }
+    
+    .family>li{float: left; width: 300px; height: 80px; background-color: #000; margin-left: 80px; margin-top: 100px; padding-left: 75px;}
+    .family>li>a{width: 100%; height: 100%;color: #fff; font-size: 20px; line-height: 80px;}
+
+    .bx-wrapper .bx-prev{
+      left: -40px;
+    }
+
+    .bx-wrapper .bx-next{
+      right: -40px;
+    }
+
+    .footer{
+      padding-top: 50px;
+    }
+
+    .footer>.addresswrap{
+      width: 1000px; 
+      margin: 0 auto;
+      text-align: center;
+      font-size:15px;
+    }
+
+    .footer>.addresswrap p.top{
+      color: #ddd;
+      margin-bottom: 10px;
+    }
+
+    .footer>.addresswrap p{
+      color:#ddd;  
+    }
+  </style>
+
 
 </head>
 
@@ -111,16 +252,16 @@
       <div class="videoclip">
         <ul class="slider">
           <li>
-            <iframe width="1200" height="600" src="https://www.youtube.com/embed/6-imtz9v3-g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="760" height="380" src="https://www.youtube.com/embed/6-imtz9v3-g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </li>
           <li>
-            <iframe width="1200" height="600" src="https://www.youtube.com/embed/9XiULRzIuGI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="760" height="380" src="https://www.youtube.com/embed/9XiULRzIuGI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </li>
           <li>
-            <iframe width="1200" height="600" src="https://www.youtube.com/embed/NDqWkg2IkUo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="760" height="380" src="https://www.youtube.com/embed/NDqWkg2IkUo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </li>
           <li>
-            <iframe width="1200" height="600" src="https://www.youtube.com/embed/tzb3k9qXqWw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="760" height="380" src="https://www.youtube.com/embed/tzb3k9qXqWw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </li>
           <li>
             <a href="http://www.tving.com/vod/player/E002836241" target="_blank"><img src="images/borugagi2.jpg" alt="" class="brgg">
@@ -189,6 +330,21 @@
             </a>
           </div>  
         </div>      
+      </div>
+    </div>
+
+    <div class="section page fp-auto-height" id="page6" data-anchor="6st">
+      <div class="footer" style="background-color: #000; height: 200px;">
+        <div class="addresswrap">
+          <p class="top">
+            이용약관 | 개인정보취급방침 | 사이트맵 | 고객센터 | 광고 및 제휴문의
+          </p>
+          <p>
+            123-456 서울특별시 구로구 (주)사랑불드라마사이트  사업자등록번호 : 123-45-6782020
+            <br>대표이사 : 김사불  대표번호 : 02-1234-5678 E-Mail: kimlovebul@naver.com
+          </p>
+          <p> Copyright(c) SARANGBUL ALL RIGHT RESERVED</p>
+        </div>
       </div>
     </div>
   </div>
