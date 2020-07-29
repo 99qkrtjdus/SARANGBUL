@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="css/fullpage.css">
   <link rel="stylesheet" href="css/colorbox/colorbox.css">
   <link rel="stylesheet" href="css/swiper.css">
-  <link rel="stylesheet" href="css/style.css">
   <script src="js/jquery-3.1.1.min.js"></script>
   <script src="js/jquery.fullPage.js"></script>
   <script src="js/jquery.bxslider.js"></script>
@@ -57,11 +56,6 @@
         innerWidth:1200,
         innerHeight:600
       });
-
-      $(".slider").bxSlider({
-        pager:false,
-        touchEnabled:false
-      });
   	});
   </script>
 
@@ -100,9 +94,9 @@
 
     #fullpage{} 
     #page1{background-image: url(images/mainmain.jpg); position: relative;}
-    #page2{background-image: url(images/mainmain22.jpg); padding-right: ;}
+    #page2{background-image: url(images/ly-background.jpg); padding-right: ;}
     #page3{background-image: url(images/mainmain22.jpg); margin: 0 auto;}
-    #page4{background-image: url(images/ly-background.jpg); }
+    #page4{background-color: #000;}
     #page5{background-image: url(images/mainmain4.jpg);}
 
     .ghed{
@@ -151,29 +145,30 @@
     }
     .swiperimg{width: 400px; height: 400px;}
 
-    .djimwrapper{
-      width: 1600px; height: 400px; position: absolute; top: 150px; left: 50%; transform: translateX(-50%);
-    } 
-    .djimwrap>li{
-      float: left; width: 400px; height: 400px;
-      
+    .swiper-contain{
+      width: 100%;
+      height: 100%;
     }
-    .djimwrap>li:hover{filter: drop-shadow(5px 5px 5px #333); transform:translate(-30px,-30px);}
 
-    .djim{display: block; width: 400px; height: 400px;}
-    
-    .videoclip{width: 760px; height: 380px; margin: 0 auto; margin-top: 100px;}
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
 
-    .brgg{width: 760px; height: 380px; display: block;}     
-
-    .bx-wrapper {
-      -moz-box-shadow: none;
-      -webkit-box-shadow: none;
-      box-shadow: none;
-      border: none;
-      background: none;
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
     }
-    
+
     .family>li{float: left; width: 300px; height: 80px; background-color: #000; margin-left: 80px; margin-top: 100px; padding-left: 75px;}
     .family>li>a{width: 100%; height: 100%;color: #fff; font-size: 20px; line-height: 80px;}
 
@@ -227,20 +222,14 @@
     </div>
 
     <div class="section page" id="page2" data-anchor="2st">
-      <div class="djimwrapper">
-        <ul class="clearfix djimwrap">
-          <li><a href="images/leejunghyuk.jpg"><img src="images/im01.png" alt="" class="djim"></a></li>
-          <li><a href="images/yoonseri.jpg"><img src="images/im02.png" alt="" class="djim"></a></li>
-          <li><a href="images/seodan.jpg"><img src="images/im03.png" alt="" class="djim"></a></li>
-          <li><a href="images/guseungjoon.jpg"><img src="images/im04.png" alt="" class="djim"></a></li>
-        </ul>
-
-        <ul class="family">
-          <li><a href="images/family01.jpg">리정혁의 사람들</a></li>
-          <li><a href="images/family02.jpg">윤세리의 사람들</a></li>
-          <li><a href="images/family03.jpg">서단의 가족들</a></li>
-          <li><a href="images/family04.jpg">사택마을 사람들</a></li>
-        </ul>
+      <div class="swiper-container2">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="images/actorimages02.png" alt=""></div>
+          <div class="swiper-slide"><img src="images/actorimages.png" alt=""></div>
+          <div class="swiper-slide"><img src="images/actorimages04.png" alt=""></div>
+          <div class="swiper-slide"><img src="images/actorimages03.png" alt=""></div>
+        </div>
+        <div class="swiper-scrollbar"></div>
       </div>
     </div>
 
@@ -249,25 +238,10 @@
     </div>
 
     <div class="section page" id="page4" data-anchor="4st">
-      <div class="videoclip">
-        <ul class="slider">
-          <li>
-            <iframe width="760" height="380" src="https://www.youtube.com/embed/6-imtz9v3-g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </li>
-          <li>
-            <iframe width="760" height="380" src="https://www.youtube.com/embed/9XiULRzIuGI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </li>
-          <li>
-            <iframe width="760" height="380" src="https://www.youtube.com/embed/NDqWkg2IkUo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </li>
-          <li>
-            <iframe width="760" height="380" src="https://www.youtube.com/embed/tzb3k9qXqWw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </li>
-          <li>
-            <a href="http://www.tving.com/vod/player/E002836241" target="_blank"><img src="images/borugagi2.jpg" alt="" class="brgg">
-            </a>
-          </li>
-        </ul>
+      <div class="bannerVI">
+        <video width="1920" height="960" autoplay muted loop class="bannervi">
+          <source src="srangbul-video.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
 
@@ -361,6 +335,13 @@
         modifier: 1,
         slideShadows : true
       }   
+    });
+
+    var swiper = new Swiper('.swiper-container2', {
+      scrollbar: {
+        el: '.swiper-scrollbar',
+        hide: true,
+      },
     });
   </script>
 

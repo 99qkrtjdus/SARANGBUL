@@ -3,155 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
-  <link rel="stylesheet" href="css/slick.css">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/slick-theme.css">
-  <script src="js/jquery-3.1.1.min.js"></script>
-  <script src="js/slick.js"></script>
-  <script>
-    $(document).ready(function() {
-      $('.slider').slick({
-        centerMode: true,
-        centerPadding: '60px',
-        slidesToShow: 4,
-        speed: 500,
-        index: 2,
-        focusOnSelect:true,
-        responsive: 
-        [
-          {
-            breakpoint: 768,
-            settings: {
-              arrows: true,
-              centerMode: true,
-              centerPadding: '40px',
-              slidesToShow: 3
-          }
-        }, 
-          {
-            breakpoint: 480,
-            settings: {
-              arrows: false,
-              centerMode: true,
-              centerPadding: '40px',
-              slidesToShow: 1
-            }  
-          }
-        ]
-      });
-    });
-  </script>
-
-  <style>
-    body {
-      background-color: grey;
-    }
-
-    .slick-center .slide-h3 {
-      color: #FFF;
-    }
-
-    .slider {
-      width: 400px;
-      height: 400px;
-      margin: 20px auto;
-      text-align: center;
-    }
-
-    .slide-h3 {
-      margin: 10% 0 10% 0;
-      padding: 40% 20%;
-      background: red;
-    }
-
-    .slider div {
-      margin-right: 5px;
-    }
-
-    .slick-slide {
-      opacity: .6;
-      width:10px;
-    }
-
-    .slick-center {
-      display: block;
-      max-width: 10% !important;
-      max-height: 20% !important;
-      opacity: 1;
-    }
-  </style>
+  <link rel="stylesheet" href="css/mo/modal.css">
+  <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="js/mocean-modals.js"></script>
 </head>
-
 <body>
-  <div class="slider">
-    <div>
-      <div class="slide-h3">
-        <img src="images/1.jpg" alt="">
-        <h3>2</h3>
-      </div>
-    </div>
-    <div>
-      <div class="slide-h3">
-        <img src="images/2.jpg" alt="">
-        <h3>2</h3>
-      </div>
-    </div>
-    <div>
-      <div class="slide-h3">
-        <img src="images/3.jpg" alt="">
-        <h3>3</h3>
-      </div>
-    </div>
-    <div>
-      <div class="slide-h3">
-        <img src="images/4.jpg" alt="">
-        <h3>4</h3>
-      </div>
-    </div>
-    <div>
-      <div class="slide-h3">
-        <img src="images/5.jpg" alt="">
-        <h3>5</h3>
-      </div>
-    </div>
-    <div>
-      <div class="slide-h3">
-        <img src="images/6.jpg" alt="">
-        <h3>6</h3>
-      </div>
-    </div>
-    <div>
-      <div class="slide-h3">
-        <img src="images/7.png" alt="">
-        <h3>7</h3>
-      </div>
-    </div>
-    <div>
-      <div class="slide-h3">
-        <img src="images/8.jpg" alt="">
-        <h3>8</h3>
-      </div>
-    </div>
-    <div>
-      <div class="slide-h3">
-        <img src="images/9.png" alt="">
-        <h3>9</h3>
-      </div>
-    </div>
-    <div>
-      <div class="slide-h3">
-        <img src="images/10.jpg" alt="">
-        <h3>10</h3>
-      </div>
-    </div>
-    <div>
-      <div class="slide-h3">
-        <img src="images/11.jpg" alt="">
-        <h3>11</h3>
-      </div>
-    </div>
+  <h3 class="title"><b>Mocean</b> SliderModals</h3>
+
+  <div class="btn-group">
+
+    <button class="mocean-modal-button" data-mocean-type="slide-in-top">Slide In (top)</button>
+    <button class="mocean-modal-button" data-mocean-type="slide-in-right">Slide In (right)</button>
+    <button class="mocean-modal-button" data-mocean-type="slide-in-bottom">Slide In (bottom)</button>
+    <button class="mocean-modal-button" data-mocean-type="slide-in-left">Slide In (left)</button>
+    <button class="mocean-modal-button" data-mocean-type="slide-in-top" data-mocean-out-type="slide-out-bottom">From Top to Bottom</button>
+    <button class="mocean-modal-button" data-mocean-type="slide-in-bottom" data-mocean-out-type="slide-out-top">From Bottom to Top</button>
+    <button class="mocean-modal-button" data-mocean-type="slide-in-left" data-mocean-out-type="slide-out-right">From Left to Right</button>
+    <button class="mocean-modal-button" data-mocean-type="slide-in-right" data-mocean-out-type="slide-out-left">From Right to Left</button>
+
   </div>
 
-<a href=""></a>
+
+  <div class="mocean-wrap mocean-modal-wrap" id="mocean-modal-wrap">
+      <div class="mocean-content mocean-modal" id="mocean-modal">
+          <h3>The Mocean Modal</h3>
+          <div class="mocean-modal-content">
+              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+              <button class="mocean-modal-close">Close me!</button>
+          </div>
+      </div>
+  </div>
+  
 </body>
 </html>
