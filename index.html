@@ -92,10 +92,12 @@
       font-size: 20px;
     }
 
+    .active{background-color: #000; color: #fff;}
+
     #fullpage{} 
     #page1{background-image: url(images/mainmain.jpg); position: relative;}
-    #page2{background-image: url(images/ly-background.jpg); padding-right: ;}
-    #page3{background-image: url(images/mainmain22.jpg); margin: 0 auto;}
+    #page2{background-color: #fff;}
+    #page3{background-image: url(images/ly-background.jpg); margin: 0 auto;}
     #page4{background-color: #000;}
     #page5{background-image: url(images/mainmain4.jpg);}
 
@@ -145,10 +147,6 @@
     }
     .swiperimg{width: 400px; height: 400px;}
 
-    .swiper-contain{
-      width: 100%;
-      height: 100%;
-    }
 
     .swiper-slide {
       text-align: center;
@@ -208,7 +206,7 @@
   <div class="wrapper">
     <nav id="navTop">
       <ul id="topmenu" class="clearfix">
-        <li><a href="#1st">DRAMA</a></li>
+        <li><a href="#1st" class="active">DRAMA</a></li>
         <li><a href="#2st">CHARACTER</a></li>
         <li><a href="#3st">PHOTO</a></li>
         <li><a href="#4st">VIDEO</a></li>
@@ -228,6 +226,7 @@
           <div class="swiper-slide"><img src="images/actorimages.png" alt=""></div>
           <div class="swiper-slide"><img src="images/actorimages04.png" alt=""></div>
           <div class="swiper-slide"><img src="images/actorimages03.png" alt=""></div>
+          <div class="swiper-slide"><img src="images/actorimages05.png" alt=""></div>
         </div>
         <div class="swiper-scrollbar"></div>
       </div>
