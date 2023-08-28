@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+/* nav */
+nav#navTop{
+  width: 800px;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+ul#topmenu{
+  display: table;
+  width: 90%;
+  margin: 20px auto;
+  border: 2px solid #fff;
+}
+
+nav#navTop li{
+  display: table-cell;
+  /*background-color: #77b193;*/
+}
+
+nav#navTop li:first-child{border-left: none;}
+nav#navTop li:hover a{background-color: #fff; color: #000;}
+nav#navTop li.active a{background-color: #fff; color: #000;}
+nav#navTop li a{
+  display: block;
+  line-height: 40px;
+  text-align: center;
+  padding: 0 5px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.active{background-color: #000; color: #fff;}
+
+
+/* fullpage 시작 */
+#fullpage{} 
+#page1{background-image: url(../images/mainmain.jpg);}
+#page2{background-color: lightgray;}
+#page3{background-image: url(../images/ly-background.jpg); margin: 0 auto;}
+#page4{background-color: #000;}
+#page5{background-image: url(../images/mainmain4.jpg);}
+
+
+.page{
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+                  
+.ml0{margin-left: 0 !important;}
+
+.iframe{width: 960px; height: 540px; margin: 0 auto;}
+
+
+/*videobtn*/
+.bannerVI{position: relative;}
+
+.videoBtn{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px; 
+  height: 100px; 
+  color: #000; 
+  text-align: center;
+  line-height: 100px;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.5); 
+  border-radius: 50px;
+  border: 1px solid #fff;
+}
+
+
+/*footer*/
+.footer{
+  padding-top: 50px;
+}
+
+.footer>.addresswrap{
+  width: 1000px; 
+  margin: 0 auto;
+  text-align: center;
+  font-size:15px;
+}
+
+.footer>.addresswrap p.top{
+  color: #ddd;
+  margin-bottom: 10px;
+}
+
+.footer>.addresswrap p{
+  color:#ddd;  
+}
